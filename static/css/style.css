@@ -1,0 +1,22 @@
+body, html {
+    height: 100%;
+}
+.intro-header {
+    background-image: url('../img/header.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    padding-top: 60px;
+    color: white;
+}
+.navbar-custom {
+    background: 0 0;
+    background-color: transparent !important;
+}
+.description-label {
+    position: absolute;
+    top: 0;
+    left: 29%;
+    top: 30%;
+}

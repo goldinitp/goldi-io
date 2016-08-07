@@ -5,7 +5,6 @@ from controllers import blog
 from webapp2_extras import jinja2
 from webapp2_extras import routes
 
-
 # method for handling errors
 def error(request, response, exception):
     logging.exception(exception)
@@ -28,6 +27,11 @@ app = webapp2.WSGIApplication([
             '/',
             handler=blog.BlogHandler,
             name='blogHandler'
+        ),
+        routes.RedirectRoute(
+            '/nwrite',
+            handler=blog.BlogWriteHandler,
+            name='blogWriteHandler'
         )
     ])
 ], debug=True)
