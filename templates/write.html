@@ -2,12 +2,15 @@
 
 {% block title %}Blog{% endblock %}
 
-{% block nav %}
+{% block navlabel%}
+    <a class="navbar-brand" href="http://blog.goldi.io">Blog</a>
+{% endblock %}
 
+{% block header %}
 {% endblock %}
 
 {% block content %}
-<form role="form" method="POST">
+<form role="form" method="POST" style="margin-top: 60px;">
     <div class="form-group">
         <label for="title">Title</label>
         <input type="title" class="form-control" id="title" name="title">

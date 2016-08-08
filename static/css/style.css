@@ -20,3 +20,7 @@ body, html {
     left: 29%;
     top: 30%;
 }
+.card-wrapper {
+    height: 300px;
+    background-color: lightgrey;
+}

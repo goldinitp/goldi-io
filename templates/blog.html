@@ -3,6 +3,30 @@
 {% block title %}Blog{% endblock %}
 
 {% block navlabel%}
-<!-- <a class="navbar-brand" href="http://goldi.io">Blog</a> -->
-<a class="navbar-brand" href="http://blog.goldi.io">Blog</a>
+    <a class="navbar-brand" href="http://blog.goldi.io">Blog</a>
+{% endblock %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <!-- {% for article in blogPosts %}
+        <div class="col-lg-12">
+          <a href="#">
+            <h2 class="post">{{article.title}}</h1>
+            <h3 class="time-post">{{article.content}}</h3>
+          </a>
+        </div>
+    {% endfor %} -->
+    <div class="row">
+    {% for article in blogPosts %}
+      <div class="col-md-3 col-md-offset-1 card-wrapper" style="margin-top: 20px">
+        <div class="card card-block">
+          <h3 class="card-title">{{article.title}}</h3>
+          <p class="card-text">{{article.content}}</p>
+          <a href="#" class="btn btn-primary">Know More..</a>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
 {% endblock %}

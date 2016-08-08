@@ -16,12 +16,12 @@ handlers:
   static_dir: vendor
 
 # for local environment
-- url: /.*
-  script: local_route.app
+# - url: /.*
+#   script: local_route.app
 
 # for production environment
-# - url: /.*
-#   script: router.app
+- url: /.*
+  script: prod_router.app
 
 libraries:
 - name: jinja2

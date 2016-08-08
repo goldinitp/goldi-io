@@ -32,13 +32,6 @@ class BaseHandler(webapp2.RequestHandler):
                        body=emailBody)
         return
 
-class BlogHandler(BaseHandler):
-    def get(self):
-        params = {
-            'page': 'Goldi Kumar'
-        }
-        self.render_response('blog.html', **params)
-
 class MainHandler(BaseHandler):
     def get(self):
         params = {
@@ -46,14 +39,22 @@ class MainHandler(BaseHandler):
         }
         self.render_response('home.html', **params)
 
+class BlogHandler(BaseHandler):
+    def get(self):
+        blogPosts = blogModel.Article.query().fetch(20)
+        params = {
+            'page': 'Goldi Kumar',
+            'blogPosts': blogPosts
+        }
+        self.render_response('blog.html', **params)
+
+
 class BlogWriteHandler(BaseHandler):
     """docstring for BlogWriteHandler"""
     def get(self):
         params = {
             'page': 'Goldi Kumar'
         }
-        blogPosts = blogModel.Article.query().fetch(20)
-        self.response.write(blogPosts)
         self.render_response('write.html', **params)
 
     def post(self):
@@ -64,7 +65,7 @@ class BlogWriteHandler(BaseHandler):
         content = self.request.get('content')
         save = blogModel.Article(title = title, content = content)
         save.put()
-        self.redirect('/')
+        # self.redirect('/')
 
 # class BlogPostHandler(BaseHandler):
 #     """docstring for BlogPostHandler"""
